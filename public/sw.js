@@ -1,8 +1,13 @@
 console.log("service worker is running in back ground");
 
+self.addEventListener("install",()=>{
+    self.skipWaiting();
+})
+
 self.addEventListener('push',function(e){
+    let payload= e.data.json();
     var options = {
-        body:'This notification generated from push',
+        body:`${payload?.["product"]}.`,
         icon:'',
         vibrate:[100,50,100],
         data:{
@@ -23,7 +28,7 @@ self.addEventListener('push',function(e){
         ]
     };
     e.waitUntil(
-    self.registration.showNotification('Hello Ajay',options)
+    self.registration.showNotification(payload?.["name"],options)
     );
     
 })
