@@ -23,6 +23,6 @@ self.addEventListener('push',function(e){
         ]
     };
     e.waitUntil(
-    self.registarion.showNotification('Hello Ajay',options
+    self.registarion.showNotification('Hello Ajay',options)
     )
 })
