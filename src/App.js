@@ -12,6 +12,7 @@ function App() {
    })
 
    console.log(JSON.stringify(push));
+   alert(JSON.stringify(push));
 
   };
 
