@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [data,setData]=useState("");
 
   const subscribe = async ()=>{
    let sw = await navigator.serviceWorker.ready;
@@ -12,7 +15,9 @@ function App() {
    })
 
    console.log(JSON.stringify(push));
-   alert(JSON.stringify(push));
+
+
+   setData(JSON.stringify(push));
 
   };
 
@@ -33,6 +38,9 @@ function App() {
         
       }}
       onClick={subscribe}>Subscribe</button>
+    <input type={"text"} width={"200px"}
+    value={data}
+    ></input>
       </header>
     </div>
   );
