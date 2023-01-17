@@ -1,15 +1,16 @@
 console.log("service worker is running in back ground");
 
-//let payload= {card:"Indian Bank",title:"Lowest Interest Ever!!",newValue:"5%",url:""};
+//let payload = {title:"Indian Bank",body:"Lowest Interest Ever!!",url:""};
 
 
 self.addEventListener("install",()=>{
     self.skipWaiting();
 })
 
-self.addEventListener('push',function(e){
-    console.log(e.data);
-    let payload= e.data.json();
+self.addEventListener('push',async (e)=>{
+
+console.log("e.data=>",e);
+   let payload=await e.data.json();
     var options = {
         body:`${payload?.["body"]}.`,
         icon:'ib.png',
