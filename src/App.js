@@ -10,7 +10,7 @@ function App() {
    let sw = await navigator.serviceWorker.ready;
    let push= await sw.pushManager.subscribe({
     userVisibleOnly:true,
-    applicationServerKey:'BOkByZMMPti3XMUua0b0xLjJ52kuwRcqGTsv6TJ-UTzAOnPiGHHTIUDmfp_uWUbMd62qwr29azANn6NC3OMyLdg',
+    applicationServerKey:'BMeznIyejTcXPzn-71stzWrjdYp3YsK-t09mMgBo9GIkkHwk8ewCbkq2-5GWnM0aoYNWoI6gQbJGGLYmjZm89AU',
 
    })
 
