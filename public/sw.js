@@ -9,7 +9,8 @@ self.addEventListener("install", () => {
 self.addEventListener("push", function (e) {
   console.log("e.data=>", e.data.text());
   if (e.data) {
-    let payload = e.data.json();
+    let payload = JSON.parse(e.data.text());
+    
     var options = {
       body: `${payload?.["body"]}.`,
       icon: "ib.png",
