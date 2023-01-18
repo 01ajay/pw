@@ -9,7 +9,7 @@ self.addEventListener("install", () => {
 self.addEventListener("push", function (e) {
   console.log("e.data=>", e.data.text());
   if (e.data) {
-    let payload = JSON.parse(e.data.text());
+    let payload = e.data.json();
     
     var options = {
       body: `${payload?.["body"]}.`,
