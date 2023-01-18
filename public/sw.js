@@ -7,10 +7,10 @@ self.addEventListener("install",()=>{
     self.skipWaiting();
 })
 
-self.addEventListener('push',async (e)=>{
+self.addEventListener('push', (e)=>{
 
 console.log("e.data=>",e);
-   let payload=await e.data.json();
+   let payload=e.data.json();
     var options = {
         body:`${payload?.["body"]}.`,
         icon:'ib.png',
